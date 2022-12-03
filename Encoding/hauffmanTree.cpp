@@ -7,20 +7,23 @@ BinarySearchTreeNode* hauffmanTree(Character* frequenciesArray){
         // create a binary tree BinarySearchTreeNode and put the two minimum in left and right child
         BinarySearchTreeNode* root_Node;
 
-        Character min_struct, root;
+        int minNumIndex;
+
+        Character root;
         // find two minimum frequencies
-        min_struct = findMin(temp_frequenciesArray);
-        root_Node->left_child = min_struct.character;
+        minNumIndex = findMin(temp_frequenciesArray);
+        root_Node->left_child = frequenciesArray[minNumIndex].character;
         root_Node->val = min_struct.frequency;
         // delete min_struct from temp_frequenciesArray;
 
-        min_struct = findMin(temp_frequenciesArray);
-        root_Node->right_child = findMin(temp_frequenciesArray);
+        minNumIndex = findMin(temp_frequenciesArray);
+        root_Node->right_child = frequenciesArray[minNumIndex].character;
         root_Node->val += min_struct.frequency;
         // delete min_struct from temp_frequenciesArray;
 
         // Add this tree BinarySearchTreeNode to given_array
         root.frequency = root_Node.val;
+        root.n = root_Node;
         temp_frequenciesArray.insert(root_Node);
     }
 }
