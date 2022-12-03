@@ -1,17 +1,35 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "node.h"
 using namespace std;
 
-char* hauffmanTree(){
-    // while(given_array.lenght != 1){
+node* hauffmanTree(){
+    while(struct_array.lenght != 1){
 
-        // find two minimum frequencies
         // create a binary tree node and put the two minimum in left and right child
-        // Add this tree node to given_array and remove the two minimum from given_array
-    // }
+        node* root_Node;
+        // find two minimum frequencies
+        root_Node->left_child = findMin(struct_array[i]);
+        root_Node->val = struct_array[i].value;
+        // delete struct_array[i];
+
+        root_Node->right_child = findMin(struct_array[i]);
+        root_Node->val += struct_array[i].value;
+        // delete struct_array[i];
+
+        // Add this tree node to given_array
+        struct_array.insert(root_Node);
+    }
 }
-int findMin(int* arr){
+struct findMin(int* struct_arr){
+    struct min = struct_arr[0];
+    for(int i=0; i<struct_arr.lenght; i++){
+        if(struct_arr[i].val<min.val){
+            min = struct_arr[i];
+        }
+    }
+    return min;
 }
 char *readFile(char fileName[])
 {
