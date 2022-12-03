@@ -1,30 +1,33 @@
 #include <iostream>
+#include <fstream>
+#include <string>
 
 using namespace std;
 
-// make a function to read a text file and return a char array
-char* read_file(char* filename) {
-    // open the file
-    FILE* file = fopen(filename, "r");
-    // get the size of the file
-    fseek(file, 0, SEEK_END);
-    int size = ftell(file);
-    // reset the file pointer to the beginning of the file
-    fseek(file, 0, SEEK_SET);
-    // allocate memory for the file
-    char* buffer = (char*)malloc(size + 1);
-    // read the file into the buffer
-    fread(buffer, 1, size, file);
-    // close the file
-    fclose(file);
-    // add a null terminator to the end of the file
-    buffer[size] = '\0';
-    // return the buffer
-    return buffer;
+char *readFile(char fileName[])
+{
+    FILE *f = fopen(fileName, "rb");
+    fseek(f, 0, SEEK_END);
+    long fsize = ftell(f);
+    fseek(f, 0, SEEK_SET);
+
+    char *string = (char *)malloc(fsize + 1);
+    fread(string, fsize, 1, f);
+    fclose(f);
+
+    string[fsize] = 0;
+    return string;
 }
 
+int main()
+{
+    char fileName[] = "inputFile.txt";
+    char *charArray =  readFile(fileName);
+    cout << charArray[0] << endl;
+    cout << charArray[1] << endl;
+    cout << charArray[2] << endl;
+    cout << charArray[3] << endl;
+    cout << charArray[4] << endl;
 
-
-int main() {
     return 0;
 }
