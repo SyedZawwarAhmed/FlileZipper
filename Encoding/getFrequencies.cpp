@@ -15,7 +15,6 @@ Character *getFrequencies(char charArray[])
     for (int i = 0; i < len; i++)
     {
         int index = int(charArray[i]);
-        // frequenciesArray[index].character = charArray[i];
         frequenciesArray[index].frequency++;
     }
     return frequenciesArray;
