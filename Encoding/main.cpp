@@ -1,6 +1,9 @@
 #include <iostream>
-#include <fstream>
-#include <string>
+#include "readFile.cpp"
+#include "Character.h"
+#include "getFrequencies.cpp"
+#include "findMin.cpp"
+
 #include "node.h"
 using namespace std;
 
@@ -49,12 +52,10 @@ char *readFile(char fileName[])
 int main()
 {
     char fileName[] = "inputFile.txt";
-    char *charArray =  readFile(fileName);
-    cout << charArray[0] << endl;
-    cout << charArray[1] << endl;
-    cout << charArray[2] << endl;
-    cout << charArray[3] << endl;
-    cout << charArray[4] << endl;
-
+    char *charArray = readFile(fileName);
+    Character *frequenciesArray = getFrequencies(charArray);
+    for (int i =0; i<256; i++) 
+    if (frequenciesArray[i].frequency > 0) cout << frequenciesArray[i].character << "    " << frequenciesArray[i].frequency << endl;
+    cout << findMin(frequenciesArray) << endl;
     return 0;
 }
