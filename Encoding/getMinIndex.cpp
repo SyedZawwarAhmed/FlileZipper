@@ -1,7 +1,6 @@
 #include <limits>
 
-Character findMin(Character *frequenciesArray)
-{
+int getMinIndex(Character *frequenciesArray) {
     int minimumFrequency = std::numeric_limits<int>::max();
     int index;
     for (int i = 0; i<256; i++) {
@@ -10,6 +9,5 @@ Character findMin(Character *frequenciesArray)
             index = i;
         }
     }
-    Character minimumFrequencyCharacter = frequenciesArray[index];
-    return minimumFrequencyCharacter;
+    return index;
 }
