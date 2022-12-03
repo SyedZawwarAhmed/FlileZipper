@@ -1,6 +1,6 @@
 #include <iostream>
-#include "Character.h"
 #include "readFile.cpp"
+#include "Character.h"
 #include "getFrequencies.cpp"
 
 using namespace std;
