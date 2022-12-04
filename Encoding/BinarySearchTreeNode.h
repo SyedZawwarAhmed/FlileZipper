@@ -3,18 +3,17 @@ using namespace std;
 
 class BinarySearchTreeNode{
     public:
-        int val;
+        char character = NULL;
+        int frequency = 0;
         BinarySearchTreeNode *left_child;
         BinarySearchTreeNode *right_child;
 
-        BinarySearchTreeNode(int val){
-            this->val = val;
-            this->left_child = NULL;
-            this->right_child = NULL;
-        }
         BinarySearchTreeNode(){
             this->left_child = NULL;
             this->right_child = NULL;
+        }
+        BinarySearchTreeNode* insert(BinarySearchTreeNode* parent_Node){
+            
         }
         // ~node(){
         //     delete left_child, right_child;
