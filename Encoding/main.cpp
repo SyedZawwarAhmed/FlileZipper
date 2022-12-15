@@ -7,6 +7,7 @@
 #include "hauffmanTree.cpp"
 #include "EncodedNode.h"
 #include "encode.cpp"
+// #include "FileCompression.cpp"
 
 using namespace std;
 
@@ -17,7 +18,7 @@ int main()
 
     vector<BinarySearchTreeNode> frequenciesArray = getFrequencies(charArray);
 
-    // for (int i = 0; i < 3; i++)
+    // for (int i = 0; i < 22; i++)
     //     cout << frequenciesArray[i].character << "    " << frequenciesArray[i].frequency << endl;
 
     // cout << frequenciesArray[getMinIndex(frequenciesArray)].character << "   " << frequenciesArray[getMinIndex(frequenciesArray)].frequency << endl;
@@ -38,5 +39,6 @@ int main()
         }
         cout << endl;
     }
+    // FileCompression(fileName, result, int(len),charArray);
     return 0;
 }
