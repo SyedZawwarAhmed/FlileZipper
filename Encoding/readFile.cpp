@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 
-char *readFile(char fileName[])
+char* readFile(char fileName[])
 {
     FILE *f = fopen(fileName, "rb");
     fseek(f, 0, SEEK_END);
