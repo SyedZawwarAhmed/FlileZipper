@@ -3,10 +3,11 @@
 #include <cstring>
 
 using namespace std;
+size_t len;
 
 vector<BinarySearchTreeNode> getFrequencies(char charArray[])
 {
-    size_t len = strlen(charArray);
+    len = strlen(charArray);
     vector<BinarySearchTreeNode> frequenciesArray(256);
     for (int i = 0; i < 256; i++)
     {
