@@ -1,5 +1,8 @@
 #include <iostream>
 #include <vector>
+#include <string>
+#include <bitset>
+#include <fstream>
 #include "readFile.cpp"
 #include "BinarySearchTreeNode.h"
 #include "getFrequencies.cpp"
@@ -7,14 +10,18 @@
 #include "hauffmanTree.cpp"
 #include "EncodedNode.h"
 #include "encode.cpp"
-// #include "FileCompression.cpp"
+#include "FileCompression.cpp"
+#include "getCharLength.cpp"
+#include "getEncodedBinaryFile.cpp"
 
 using namespace std;
 
 int main()
 {
     char fileName[] = "../inputFile.txt";
-    char *charArray = readFile(fileName);
+    char* charArray = readFile(fileName);
+
+getCharLength(charArray);
 
     vector<BinarySearchTreeNode> frequenciesArray = getFrequencies(charArray);
 
@@ -39,6 +46,11 @@ int main()
         }
         cout << endl;
     }
-    // FileCompression(fileName, result, int(len),charArray);
+    // Create another file with encoded data
+    string encoded_string = FileCompression(charArray, getCharLength(charArray));
+
+    getEncodedBinaryFile(encoded_string);
+
+
     return 0;
 }
