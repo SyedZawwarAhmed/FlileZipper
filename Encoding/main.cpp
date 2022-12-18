@@ -12,6 +12,7 @@
 #include "encode.cpp"
 #include "FileCompression.cpp"
 #include "getCharLength.cpp"
+#include "multiple.cpp"
 #include "getEncodedBinaryFile.cpp"
 
 using namespace std;
@@ -37,15 +38,15 @@ getCharLength(charArray);
     vector<EncodedNode> encoded_Node_Vector = {enc_node};
     // vector<EncodedNode> result = encode(root_Node, weight);
     encode(root_Node, weight);
-    for (int i = 0; i < result.size(); i++)
-    {
-        cout << result[i].character << "  ";
-        for (int j = 0; j < result[i].weight.size(); j++)
-        {
-            cout << result[i].weight[j];
-        }
-        cout << endl;
-    }
+    // for (int i = 0; i < result.size(); i++)
+    // {
+    //     cout << result[i].character << "  ";
+    //     for (int j = 0; j < result[i].weight.size(); j++)
+    //     {
+    //         cout << result[i].weight[j];
+    //     }
+    //     cout << endl;
+    // }
     // Create another file with encoded data
     string encoded_string = FileCompression(charArray, getCharLength(charArray));
 
