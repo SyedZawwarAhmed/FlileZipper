@@ -14,6 +14,8 @@
 #include "getCharLength.cpp"
 #include "multiple.cpp"
 #include "getEncodedBinaryFile.cpp"
+#include "../Decoding/decode.cpp"
+#include "../Decoding/reverseStr.cpp"
 
 using namespace std;
 
@@ -38,6 +40,7 @@ getCharLength(charArray);
     vector<EncodedNode> encoded_Node_Vector = {enc_node};
     // vector<EncodedNode> result = encode(root_Node, weight);
     encode(root_Node, weight);
+
     // for (int i = 0; i < result.size(); i++)
     // {
     //     cout << result[i].character << "  ";
@@ -51,6 +54,7 @@ getCharLength(charArray);
     string encoded_string = FileCompression(charArray, getCharLength(charArray));
 
     getEncodedBinaryFile(encoded_string);
+    decode("D:\\Annas Docs\\fourth sem\\DSA\\FlileZipper\\Encoding\\enc_file.bin", root_Node, encoded_string.size());
 
 
     return 0;
