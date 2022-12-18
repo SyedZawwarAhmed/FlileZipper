@@ -10,13 +10,10 @@ string FileCompression(char* charArray, int length){
                 w = result[j].weight;
                 for(const char character: w)
                 encoded_string+=character;
-                encoded_string += '\0';
             }
         }
     }
-    cout<<encoded_string;
     return encoded_string;
-
 }
 
 
